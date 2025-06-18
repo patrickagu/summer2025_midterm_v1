@@ -1,0 +1,241 @@
+/* General Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  /* 1. Adjust box-sizing so element dimensions include padding and borders (1 mark) */
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Helps simplify rem calculations */
+}
+
+body {
+  /* 2. Apply a custom web font (e.g., from a web font service) (2 marks) */
+  color: #222;
+  line-height: 1.6;
+  /* Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+}
+
+/* Navigation */
+nav {
+  /* 3. Make the nav bar stay fixed at the top when scrolling (2 marks) */
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* use position sticky and top 0 */
+  position: sticky;
+  top: 0;
+}
+
+nav .logo {
+  font-weight: 700;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+/* 4. Style the navigation links: spacing, appearance, and various link states (2 marks) */
+nav ul li {
+    list-style: none;
+    display: inline-block; 
+    padding: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    outline: none;
+    padding: 1rem;
+    text-align: center;
+    line-height: 3;
+}
+
+/* style the link states in the correct order */ 
+nav ul li a:link {
+    background-color: white;
+    color: #333;
+}
+
+nav ul li a:visited {
+    text-decoration: underline;
+}
+
+nav ul li a:focus {
+    background-color: #265301;
+    color: #fff;  /* text color*/
+
+}
+
+nav ul li a:hover {
+    background-color: pink;
+    color: #fff;
+}
+
+nav ul li a:active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  /* 5. Add a background image and center it within the element (2 marks) */
+  background-image: url('https://wallpapers.com/images/featured/blank-white-7sn5o1woonmklx1h.jpg'); /* white background image*/
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  /* Add a position */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero img {
+  /* Required to style the image, with position and z-index */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero h1 {
+  /* 6. Set the font size to roughly 25px using rem units (1 mark) */
+  font-size: 2.5rem;  
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: #f0f0f0;
+}
+
+.hero p {
+  margin-top: 1rem;
+  /* 7. Set the font size to roughly 20px using rem units (1 mark) */
+  font-size: 2rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  color: #f0f0f0;
+}
+
+/* Section Base */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Services */
+#services h2 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  /* 8. Make the heading text all uppercase (1 mark) */
+  text-transform: uppercase;    /* to capitalize the entire heading texts*/
+  color: #1f2937;
+}
+#services h3 {
+/* To edit the font size and make it bold*/
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#services p {
+  /* To edit the font-size*/
+  font-size: 1.2rem;
+}
+
+.card {
+  position: relative;   /* neccessary */
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  /* 9. Position this element overlapping the top-right of the .card container (4 marks) */
+  position: absolute;   /* to position it relative to .card which is the parent or nearest ancestor */
+  top: 0;
+  right: 0;
+  background: #e63946;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Contact Form */
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #1f2937;
+}
+
+.contact-form {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form input {
+  /* 10. Apply visual styles based on the form mockup provided (4 marks) */
+  border: none;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+}
+.contact-form textarea {
+  display: block;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 100%;
+  resize: none;
+  overflow: scroll;
+  margin-bottom: 2rem;
+}
+
+.contact-form button {
+  background: #e63946;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+    width: 25%;
+    margin: 0 auto;
+    background-color: #f2071b;
+    color: #fbfbfb;
+    height: 5rem;
+    text-align: center;
+    padding-left: 0;
+}
+
+button[type="submit"]:hover {
+    color: yellow;
+    background-color: yellow;
+}
